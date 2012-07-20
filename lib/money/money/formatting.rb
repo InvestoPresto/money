@@ -172,10 +172,10 @@ class Money
           symbol
         end
 
-      formatted = rules[:no_cents] ? "#{self.to_s.to_i}" : self.to_s
+      formatted = rules[:no_cents] ? "#{self.to_string.to_i}" : self.to_string
 
       if rules[:no_cents_if_whole] && cents % currency.subunit_to_unit == 0
-        formatted = "#{self.to_s.to_i}"
+        formatted = "#{self.to_string.to_i}"
       end
 
       symbol_position =
